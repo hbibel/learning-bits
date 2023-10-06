@@ -1,0 +1,13 @@
+<div id="media">
+  Playing media ...
+  <button id="play-button" hx-get="/play-button.html" hx-trigger="click" hx-target="#media" hx-swap="outerHTML">Play
+    next media</button>
+  <script>
+    const canPlayMedia = "mediaCapabilities" in navigator;
+    if (!canPlayMedia) {
+      console.log("can't play media");
+      const playButton = document.getElementById("play-button");
+      playButton.disabled = true;
+    }
+  </script>
+</div>
